@@ -1,2 +1,3 @@
-# to-do
-React to do app with drag &amp; drop list
+tl;dr
+
+React to do app with drag &amp; drop boards

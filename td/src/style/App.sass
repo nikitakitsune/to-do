@@ -1,0 +1,109 @@
+*
+  font-family: 'Inter'
+
+body
+  background-color: var(--background)
+  display: flex
+  justify-content: space-around
+
+.app
+  display: flex
+  align-items: flex-start
+  flex-wrap: wrap
+
+@media screen and (min-width: 650px)
+  .board
+    width: 320px
+    margin: 0 10px 10px 0
+
+@media screen and (max-width: 649px)
+  .board
+    width: calc( 100% - 20px )
+    margin: 10px
+
+.board
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.board:last-of-type
+  margin: 0
+
+.board__tasks
+  list-style: none
+  padding: 0
+  margin: 0
+  width: 100%
+  box-sizing: border-box
+  border-radius: 10px
+
+.task
+  background-color: white
+  padding: 8px
+  border-radius: 20px
+  margin: 0 0 4px
+  display: flex
+
+.task__shadow
+  margin: 0 0 10px
+
+.task:hover
+  cursor: default
+
+.task:has(.task__checkbox:checked)
+  opacity: .7
+
+.task__checkbox
+  width: 20px
+  height: 20px
+  position: absolute
+  opacity: 0
+  pointer-events: none
+
+.task__checkbox:hover
+  cursor: pointer
+
+.task__label
+  width: 20px
+  height: 20px
+  border-radius: 10px
+  border: solid 2px #d3d3d3
+  mouse-event: none
+  position: relative
+  box-sizing: border-box
+  cursor: pointer
+
+.task__label:has(.task__checkbox:checked)
+  background-color: var(--color)
+  border: solid 2px var(--color)
+
+.task__checkmark
+  position: absolute
+  width: 10px
+  height: 10px
+  margin: 3px
+
+.task__label::selection,
+.task__checkmark::selection,
+.task__checkbox::selection
+  background-color: transparent
+
+.task__container
+  margin: 0 0 0 5px
+
+.task__title
+  font-size: 16px
+  margin: 0
+  pointer-events: none
+
+.task__title:first-letter
+  text-transform: uppercase
+
+.task__subtitle
+  font-size: 14px
+  margin: 3px 0 0
+
+a
+  color: black
+  text-decoration: underline solid 2px var(--color)
+  border-radius: 4px
